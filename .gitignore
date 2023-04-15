@@ -4,3 +4,4 @@ cache
 node_modules
 artifacts
 *.bck
+.DS_Store
