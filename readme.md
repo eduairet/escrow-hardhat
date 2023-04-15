@@ -1,26 +1,47 @@
 # Decentralized Escrow Application
 
-This is an Escrow Dapp built with [Hardhat](https://hardhat.org/).
+[Alchemy University](https://university.alchemy.com) Week 5 final exercise by Eduardo Aire
 
-## Project Layout
+## Content
 
-There are three top-level folders:
+1. Frontend - [`/app`](./app/)
+2. Escrow contract - [`/contracts`](./contracts/Escrow.sol)
+3. Contract tests - [`/tests`](./test/)
 
-1. `/app` - contains the front-end application
-2. `/contracts` - contains the solidity contract
-3. `/tests` - contains tests for the solidity contract
+### Local Configuration
 
-## Setup
+-   Run `npm install` for hardhat dependencies
+-   Run `cd app && npm install` for frontend dependencies
 
-Install dependencies in the top-level directory with `npm install`.
+## Hardhat
 
-After you have installed hardhat locally, you can use commands to test and compile the contracts, among other things. To learn more about these commands run `npx hardhat help`.
+-   Configuration - [`hardhat.config.js`](./hardhat.config.js)
 
-Compile the contracts using `npx hardhat compile`. The artifacts will be placed in the `/app` folder, which will make it available to the front-end. This path configuration can be found in the `hardhat.config.js` file.
+-   Compile contracts (artifacts will go to `/app`):
+    ```Shell
+    # With hardhat
+    npx hardhat compile
+    # With npm scripts
+    npm run compile
+    ```
+-   Test contracts:
+    ```Shell
+    # With hardhat
+    npx hardhat test
+    # With npm scripts
+    npm run test
+    ```
+-   Start local node:
+    ```Shell
+    # With hardhat
+    npx hardhat node
+    # With npm scripts
+    npm run node
+    ```
 
 ## Front-End
 
-`cd` into the `/app` directory and run `npm install`
-
-To run the front-end application run `npm start` from the `/app` directory. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
+-   Start development host `npm start`
+    -   At root level it runs the [npm script `start`](./package.json) which runs `cd app && npm start`
+    -   You can `cd app` and run `npm start` as well
+-   Go to `http://localhost:3000`

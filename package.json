@@ -1,10 +1,13 @@
 {
-  "name": "Escrow-Hardhat",
+  "name": "escrow-hardhat",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd app && npm start",
+    "compile": "npx hardhat compile",
+    "node": " npx hardhat node",
+    "test": "npx hardhat test"
   },
   "keywords": [],
   "author": "",
