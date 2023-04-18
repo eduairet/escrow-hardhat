@@ -2,6 +2,7 @@ import { useState, useContext, useReducer } from 'react';
 import { ethers } from 'ethers';
 import { EscrowContext } from '../store/escrow-context';
 import deploy from '../utils/deploy';
+import server from '../utils/server';
 
 const initialEscrow = {
         arbiter: '',
@@ -69,28 +70,8 @@ export default function NewContractForm() {
                 arbiter: newEscrow.arbiter,
                 beneficiary: newEscrow.beneficiary,
                 amount: newEscrow.amount,
-                handleApprove: async setIsApproving => {
-                    setIsApproving(true);
-                    try {
-                        escrowContract.on('Approved', () => {
-                            document
-                                .getElementById(escrowContract.address)
-                                .classList.add('invisible');
-                            const successEl =
-                                document.getElementById('approved');
-                            successEl.className = 'complete';
-                            successEl.textContent = "✓ It's been approved!";
-                        });
-                        const approveTxn = await escrowContract
-                            .connect(escrowCtx.signer)
-                            .approve();
-                        await approveTxn.wait();
-                    } catch (err) {
-                        alert(err.message);
-                        setIsApproving(false);
-                    }
-                },
             };
+            await server.post('/new-escrow', escrow);
             escrowCtx.setEscrows([...escrowCtx.escrows, escrow]);
             dispatchEscrow({ type: 'submit', payload: null });
         } catch (err) {

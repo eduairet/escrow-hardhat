@@ -29,6 +29,7 @@ app.get('/escrows/:deployer', (req, res) => {
     let deployerContracts = escrows.filter(
         escrow => escrow.address === deployer
     );
+    console.log(deployerContracts);
     res.send(deployerContracts);
 });
 
