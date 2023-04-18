@@ -12,24 +12,29 @@ body {
 }
 
 main {
+    padding: 2rem 0 4rem 0;
     width: 100vw;
+    flex-direction: column;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
 }
 
-.contract,
-.existing-contracts {
-    margin: 20px;
-    flex-basis: 100%;
-    padding: 40px;
-    border: 2px solid #b7ff00;
-    border-radius: 1rem;
-    background-color: #000c22;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: aquamarine;
+    font-weight: bold;
+}
+
+p {
+    color: aquamarine;
 }
 
 h1 {
-    color: aquamarine;
     margin: 10px;
     padding: 10px;
     border-bottom: 1px solid #b7ff00;
@@ -52,6 +57,55 @@ input[type='text'] {
     outline: none;
     border: none;
     border-radius: 0.25rem;
+}
+
+.main-title {
+    width: 100%;
+    text-align: Center;
+    padding-bottom: 1.5rem;
+}
+
+.contract,
+.existing-contracts {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+    padding: 40px;
+    border: 2px solid #b7ff00;
+    border-radius: 1rem;
+    background-color: #000c22;
+}
+
+.existing-contract ul {
+    padding: 1rem;
+    margin: 20px;
+    background-color: #000c22;
+    border: 1px solid #b7ff00;
+    border-radius: 0.5rem;
+}
+
+.existing-contract ul > li {
+    color: aquamarine;
+    list-style: none;
+    display: flex;
+    margin: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #b7ff00;
+    overflow-x: scroll;
+}
+
+.existing-contract ul > li > div {
+    margin: 0 5px;
+}
+
+.existing-contract ul > li > :first-child {
+    font-weight: bold;
+}
+
+.existing-contract .complete {
+    color: aquamarine;
+    text-align: center;
+    padding: 1rem 0 0.5rem 0;
 }
 
 .button {
@@ -82,37 +136,6 @@ input[type='text'] {
     color: #b7ff00;
 }
 
-.existing-contract ul {
-    padding: 1rem;
-    margin: 20px;
-    background-color: #000c22;
-    border: 1px solid #b7ff00;
-    border-radius: 0.5rem;
-}
-
-.existing-contract ul > li {
-    color: aquamarine;
-    list-style: none;
-    display: flex;
-    margin: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #b7ff00;
-}
-
-.existing-contract ul > li > div {
-    margin: 0 5px;
-}
-
-.existing-contract ul > li > :first-child {
-    font-weight: bold;
-}
-
-.existing-contract .complete {
-    color: aquamarine;
-    text-align: center;
-    padding: 1rem 0 0.5rem 0;
-}
-
 .invalid-text {
     color: #ff008c;
 }
@@ -125,8 +148,13 @@ input[type='text'] {
     display: none;
 }
 
-@media screen and (max-width: 750px) {
-    main {
-        flex-direction: column;
-    }
+.fixed-container {
+    position: fixed;
+    background-color: #000c2255;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import useEthereum from '../hooks/useEthereum';
 import server from '../utils/server';
+import Spinner from '../components/Spinner';
 
 export const EscrowContext = React.createContext({
     provider: {},
@@ -13,7 +14,9 @@ export const EscrowContext = React.createContext({
 export default function EscrowContextProvider({ children }) {
     const { provider, account, signer } = useEthereum(),
         [escrows, setEscrows] = useState([]),
+        [loading, setLoading] = useState([]),
         getEscrows = useCallback(async () => {
+            setLoading(true);
             try {
                 const accountEscrows = await server.get(`/escrows/${account}`),
                     data = accountEscrows.data;
@@ -21,6 +24,7 @@ export default function EscrowContextProvider({ children }) {
             } catch (err) {
                 alert(err.message);
             }
+            setLoading(false);
         }, [account]);
 
     useEffect(() => {
@@ -37,7 +41,7 @@ export default function EscrowContextProvider({ children }) {
                 setEscrows,
             }}
         >
-            {children}
+            {loading ? <Spinner loading={loading} /> : children}
         </EscrowContext.Provider>
     );
 }

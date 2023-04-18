@@ -4,13 +4,19 @@ import NewContractForm from './components/NewContractForm';
 import ExistingContracts from './components/ExistingContracts';
 
 export default function App() {
-    const escrowCtx = useContext(EscrowContext);
-    return escrowCtx.provider ? (
+    const { provider, account } = useContext(EscrowContext);
+    return provider ? (
         <main>
+            <h1 className='main-title'>ESCROW CONTRACT FACTORY</h1>
+            <p>
+                <strong>Signer:</strong> {account}
+            </p>
             <NewContractForm />
             <ExistingContracts />
         </main>
     ) : (
-        <p>You need to install a browser wallet to build the escrow dapp</p>
+        <div className='fixed-container'>
+            <p>You need to install a browser wallet to use the DApp</p>
+        </div>
     );
 }
