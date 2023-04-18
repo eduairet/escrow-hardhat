@@ -1,40 +1,63 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Menlo', monospace;
+}
+
 body {
-    background-color: #eee;
+    padding: 0;
+    margin: 0;
+    background-color: #000c22;
     display: flex;
-    font-family: 'Muli', sans-serif;
+    width: 100vw;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .contract,
 .existing-contracts {
     margin: 20px;
-    display: inline-block;
+    flex-basis: 100%;
     padding: 40px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    border: 2px solid #b7ff00;
+    border-radius: 1rem;
+    background-color: #000c22;
 }
 
 h1 {
+    color: aquamarine;
     margin: 10px;
     padding: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #b7ff00;
 }
 
 label {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    color: #aaa;
+    color: aquamarine;
     margin: 20px;
 }
 
 input[type='text'] {
+    margin-top: 0.5rem;
     padding: 6px;
     font-size: 18px;
+    background-color: aquamarine;
+    color: 000c22;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
 }
 
 .button {
-    background-color: #f58427;
-    color: white;
+    border: 1px solid #b7ff00;
+    background-color: #000c22;
+    color: #b7ff00;
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
@@ -43,23 +66,37 @@ input[type='text'] {
     font-size: 14px;
     letter-spacing: 1px;
     cursor: pointer;
+    border-radius: 0.25rem;
+    transition: all 0.5s ease;
+}
+
+.button:hover {
+    background-color: #b7ff00;
+    color: #000c22;
 }
 
 .button:disabled {
     cursor: not-allowed;
-    background-color: #ffddc1;
+    opacity: 0.5;
+    background-color: #000c22;
+    color: #b7ff00;
 }
 
 .existing-contract ul {
-    padding: 10px;
+    padding: 1rem;
     margin: 20px;
-    background-color: #eee;
+    background-color: #000c22;
+    border: 1px solid #b7ff00;
+    border-radius: 0.5rem;
 }
 
 .existing-contract ul > li {
+    color: aquamarine;
     list-style: none;
     display: flex;
-    margin: 10px;
+    margin: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #b7ff00;
 }
 
 .existing-contract ul > li > div {
@@ -71,18 +108,25 @@ input[type='text'] {
 }
 
 .existing-contract .complete {
-    color: #5aa75a;
+    color: aquamarine;
     text-align: center;
+    padding: 1rem 0 0.5rem 0;
 }
 
 .invalid-text {
-    color: red;
+    color: #ff008c;
 }
 
 .invalid-border {
-    border-color: red;
+    border-color: #ff008c;
 }
 
 .invisible {
-  display: none;
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    main {
+        flex-direction: column;
+    }
 }
