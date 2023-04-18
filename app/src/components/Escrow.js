@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 export default function Escrow({
     address,
     arbiter,
@@ -5,6 +7,8 @@ export default function Escrow({
     amount,
     handleApprove,
 }) {
+    const [isApproving, setIsApproving] = useState(false);
+
     return (
         <div className='existing-contract'>
             <ul className='fields'>
@@ -20,16 +24,18 @@ export default function Escrow({
                     <div> Value </div>
                     <div> {amount} </div>
                 </li>
-                <div
+                <button
                     className='button'
                     id={address}
-                    onClick={e => {
+                    onClick={async e => {
                         e.preventDefault();
-                        handleApprove();
+                        await handleApprove(setIsApproving);
                     }}
+                    disabled={isApproving}
                 >
-                    Approve
-                </div>
+                    {isApproving ? 'Wait...' : 'Approve'}
+                </button>
+                <div id='approved' className='invisible'></div>
             </ul>
         </div>
     );
