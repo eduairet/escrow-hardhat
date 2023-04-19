@@ -67,5 +67,7 @@ The app has the contract code and test, the frontend React App, and a server tha
 -   You can test the demo on any network supported by your browser wallet (tested with Metamask)
 -   When you deploy a contract it will appear on the existing contracts card
 -   When you approve the contract the beneficiary will be able to withdraw the funds
--   When the beneficiary withdraws the funds the contract will be marked as finished - Check a withdrawal on Sepolia https://sepolia.etherscan.io/tx/0xd86428fe63b1074ad125b03bde4d1937d172e20a3aef093d4df15c693f1facea
+-   When the beneficiary withdraws the funds the contract will be marked as finished
+-   Check a withdrawal on Sepolia https://sepolia.etherscan.io/tx/0xd86428fe63b1074ad125b03bde4d1937d172e20a3aef093d4df15c693f1facea
+    
     ![UI](ui.png)
