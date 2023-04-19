@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd app && npm start",
+    "server": "cd server && npm run dev",
     "compile": "npx hardhat compile",
     "node": " npx hardhat node",
     "test": "npx hardhat test"
