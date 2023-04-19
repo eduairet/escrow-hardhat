@@ -18,6 +18,7 @@ The app has the contract code and test, the frontend React App, and a server tha
 
 -   Run `npm install` for hardhat dependencies
 -   Run `cd app && npm install` for frontend dependencies
+-   Run `cd server && npm install` for backend dependencies
 
 ## Hardhat
 
@@ -45,14 +46,14 @@ The app has the contract code and test, the frontend React App, and a server tha
     npm run node
     ```
 
-## Front-End
+## Frontend
 
 -   Start development host `npm start`
     -   At the root level it runs the [npm script `start`](./package.json) which runs `cd app && npm start`
     -   You can `cd app` and run `npm start` as well
 -   Go to `http://localhost:3000`
 
-## Back-End
+## Backend
 
 -   Start the express server `npm run server`
     -   At the root level it runs the [npm script `server`](./package.json) which runs `cd app && npm run dev`
