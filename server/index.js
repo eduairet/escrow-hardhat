@@ -18,10 +18,12 @@ app.get('/escrows', (req, res) => {
     res.send(escrows);
 });
 
-app.get('/escrows/:deployer', (req, res) => {
-    const { deployer } = req.params;
+app.get('/escrows/:signer', (req, res) => {
+    const { signer } = req.params;
     let deployerContracts = escrows.filter(
-        escrow => escrow.arbiter.toLowerCase() === deployer.toLowerCase()
+        escrow =>
+            escrow.arbiter.toLowerCase() === signer.toLowerCase() ||
+            escrow.beneficiary.toLowerCase() === signer.toLowerCase()
     );
     res.send(deployerContracts);
 });

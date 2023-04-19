@@ -102,9 +102,17 @@ input[type='text'] {
     font-weight: bold;
 }
 
-.existing-contract .complete {
+.approved {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.approved-el {
+    margin: 1rem;
+    flex-basis: 100%;
     color: aquamarine;
-    text-align: center;
     padding: 1rem 0 0.5rem 0;
 }
 
