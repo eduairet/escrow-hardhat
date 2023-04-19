@@ -10,7 +10,7 @@ The app has the contract code and test, the frontend React App, and a server tha
 ## Content
 
 1. Frontend - [`/app`](./app/)
-2. Backen - [`/server`](./server/)
+2. Backend - [`/server`](./server/)
 3. Escrow contract - [`/contracts`](./contracts/Escrow.sol)
 4. Contract tests - [`/tests`](./test/)
 
