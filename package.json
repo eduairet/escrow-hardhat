@@ -1,7 +1,7 @@
 {
   "name": "escrow-hardhat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Escrow Contract Factory",
   "main": "index.js",
   "scripts": {
     "start": "cd app && npm start",
@@ -10,8 +10,8 @@
     "test": "npx hardhat test"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alchemy University / Eduardo Aire",
+  "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
